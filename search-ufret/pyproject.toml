@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "search-ufret"
+version = "0.1.0"
+description = ""
+authors = ["watanabe <sek.ohei.w0822@icloud.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+seqlabel = "^0.2.4"
+fastapi = "^0.104.1"
+uvicorn = "^0.24.0.post1"
+elasticsearch = "^8.11.1"
+
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.1.0"
+autopep8 = "^2.0.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

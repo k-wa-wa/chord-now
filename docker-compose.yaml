@@ -12,6 +12,14 @@ services:
       - 9200:9200
       - 9300:9300
 
+  app:
+    build:
+      context: search-ufret
+      dockerfile: Dockerfile
+    environment:
+      - ES_ENDPOINT=http://es:9200
+    ports:
+      - 8000:8000
 
 volumes:
   es-data:
@@ -21,5 +29,5 @@ endpoints:
     dev.okteto.com/generate-host: true
   rules:
     - path: /
-      service: es
-      port: 9200
+      service: app
+      port: 8000
