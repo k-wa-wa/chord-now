@@ -15,3 +15,11 @@ services:
 
 volumes:
   es-data:
+
+endpoints:
+  labels:
+    dev.okteto.com/endpoints: https://test-${OKTETO_NAMESPACE}.${OKTETO_DOMAIN}
+  rules:
+    - path: /
+      service: es
+      port: 9200
