@@ -29,7 +29,8 @@ def _query_metadata(query: dict):
                 artist_name=hit["_source"]["artist_name"],
                 data_id=str(hit["_source"]["data_id"]),
                 score=float(hit["_score"]),
-                _sort_index=hit["sort"][0] if len(hit["sort"]) else None
+                _sort_index=hit["sort"][0]
+                if "sort" in hit and len(hit["sort"]) else None
             )
         )
 
@@ -61,7 +62,7 @@ def search_songs(metadata_list: list[SongMetadata]):
     return result
 
 
-def get_all_metadata():
+def get_all_metadata():  # no-tested
     result = []
 
     search_after = None
