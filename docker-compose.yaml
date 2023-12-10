@@ -18,7 +18,7 @@ volumes:
 
 endpoints:
   labels:
-    dev.okteto.com/endpoints: https://test-${OKTETO_NAMESPACE}.${OKTETO_DOMAIN}
+    dev.okteto.com/generate-host: true
   rules:
     - path: /
       service: es
