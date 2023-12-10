@@ -1,0 +1,17 @@
+services:
+  es:
+    build:
+      context: es
+      dockerfile: Dockerfile
+    environment:
+      - discovery.type=single-node
+      - ENV xpack.security.enabled=false
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+
+
+volumes:
+  es-data:
